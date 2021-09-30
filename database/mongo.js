@@ -45,6 +45,7 @@ const characteristicsReviewsSchema = new mongoose.Schema({
     type: Schema.Types.ObjectId,
     ref: 'Characteristics'
   },
+  review_id: {type: Number, required: true},
   value: Number
 })
 
