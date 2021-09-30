@@ -4,6 +4,7 @@ const port = 3001
 
 // Middlewares
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }))
 
 // get routers
 app.get('/', (req, res) => {
