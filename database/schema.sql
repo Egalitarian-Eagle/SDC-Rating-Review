@@ -6,7 +6,7 @@ CREATE TABLE reviews (
   id SERIAL PRIMARY KEY,
   product_id INT NOT NULL,
   rating INT NOT NULL,
-  date BIGINT NOT NULL,
+  date TEXT NOT NULL,
   summary TEXT NOT NULL,
   body TEXT NOT NULL,
   recommend BOOLEAN NOT NULL,
@@ -48,5 +48,7 @@ CREATE TABLE characteristics_reviews (
 );
 
 -- CREATE INDEX cha_id_index ON characteristics_reviews(characteristics_id);
+
+-- COPY reviews(id, product_id, rating, date, summary, body, recommend, reported, reviewer_name, reviewer_email, response, helpfulness) FROM '/home/yue_zhang/hackreactor/w9/SDC-Rating-Review/seeds/reviews.csv' DELIMITER ',' CSV HEADER;
 -- COPY reviews_photos(id, review_id, url) FROM '/home/yue_zhang/hackreactor/w9/SDC-Rating-Review/seeds/reviews_photos.csv' DELIMITER ',' CSV HEADER;
-COPY reviews(id, product_id, rating, date, summary, body, recommend, reported, reviewer_name, reviewer_email, response, helpfulness) FROM '/home/yue_zhang/hackreactor/w9/SDC-Rating-Review/seeds/reviews.csv' DELIMITER ',' CSV HEADER;'
+-- COPY characteristics(id, product_id, name) FROM '/home/yue_zhang/hackreactor/w9/SDC-Rating-Review/seeds/characteristics.csv  DELIMITER ',' CSV HEADER;

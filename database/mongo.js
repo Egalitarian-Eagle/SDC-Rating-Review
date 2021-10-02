@@ -11,7 +11,7 @@ const reviewsSchema = new mongoose.Schema({
   body: {type: String, required:true},
   recommend: {type:Boolean, default: false},
   reported: {type:Boolean, default: false},
-  reviewer_name: {type: String, required:true},,
+  reviewer_name: {type: String, required:true},
   reviewer_email: {type: String, required:true},
   response: String,
   helfulness: {type: Number, required: true},

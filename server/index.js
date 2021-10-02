@@ -1,15 +1,13 @@
 const express = require('express')
 const app = express()
+const router = require('./routes/index.js')
 const port = 3001
 
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 
-// get routers
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.use('/', router)
 
 
 // Port console.log
