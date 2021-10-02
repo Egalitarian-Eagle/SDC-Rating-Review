@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const router = require('./routes/index.js')
-const port = 3001
+const port = 3002
 
 // Middlewares
 app.use(express.json());

@@ -1,4 +1,6 @@
-// ========= GET / reviews =================
+const db = require('../../database/index.js');
+
+// ========= GET /reviews =================
 
 const getReviews = (req, res) => {
 
@@ -6,6 +8,8 @@ const getReviews = (req, res) => {
   const page = req.query.page || 1;
   const count = req.query.count || 5;
   const sort = req.query.sort ? `ORDER BY ${req.query.sort}DESC` : `ORDER BY date DESC`;
+  const startIdx = (page - 1) * count;
+  const endIdx = page * count;
 
   const fetchData = async () => {
     const data = db.query(
@@ -28,12 +32,12 @@ const getReviews = (req, res) => {
         review.photos = [];
         urls.forEach((photo,index) => {
           if(photo) {
-            photo.photos.push({id: index, url: photo})
+            review.photos.push({id: index, url: photo})
           }
         })
       })
 
-      const sendData = { product: product_id, page: page, count:count, result: result[0].rows.slice(startIndex, endIndex)}
+      const sendData = { product: product_id, page: page, count:count, data: data[0].rows.slice(startIdx, endIdx)}
       res.status(200);
       res.send(sendData);
     })
