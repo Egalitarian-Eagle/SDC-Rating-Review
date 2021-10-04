@@ -61,8 +61,50 @@ const updateReport = async (req, res) => {
   }
 };
 
+// ============== POST /reviews =====================
+// const postReview = async (req, res) => {
+//   const {
+//     product_id, rating, body, recommend, name, email, characteristics, photos, summary,
+//   } = req.body;
+//   const timeStamp = new Date();
+//   const date = timeStamp.toString();
+
+//   try {
+//     const reqQuery = 'INSERT INTO reviews (id, product_id, rating, date, summary, body, recommend, reported, reviewer_name, reviewer_email, response, helpfulness) VALUES (DEFAULT, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING id;';
+//     const reqValues = [product_id, rating, date, summary, body, recommend, false, name, email, null, 0];
+//     const results = await db.query(reqQuery, reqValues);
+//     const review_id = results.rows[0].id;
+
+//     // insert photo links
+//     if(req.body.photos) {
+//       req.body.photos.forEach((photo) => {
+//           const addPhotoQuery = {
+//           text: `INSERT INTO photolinks(review_id, image_url) VALUES ($1, $2)`,
+//           values: [id, photo]
+//           }
+//           db.query(addPhotoQuery.text, addPhotoQuery.values);
+//       })
+//     }
+
+//     // insert characteristics
+//     const charsKeys = Object.keys(characteristics);
+//     for (let i = 0; i < charsKeys.length; i++) {
+//       const value = characteristics[charsKeysArray[i]];
+//       const char_Id = charsKeysArray[i];
+//       await client.query(addCharacteristicReview, [review_id, char_Id, value]);
+//     }
+//     response.sendStatus(201);
+
+//   } catch(e) {
+//     console.log(e);
+//     res.sendStatus(500).end();
+//   }
+
+// }
+
+
 module.exports = {
   getReviews,
   updateHelpful,
-  updateReport
-}
+  updateReport,
+};
