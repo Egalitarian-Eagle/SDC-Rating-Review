@@ -47,6 +47,12 @@ CREATE TABLE characteristics_reviews (
   FOREIGN KEY (review_id) REFERENCES reviews(id)
 );
 
+
+
+
+
+
+
 -- CREATE INDEX cha_id_index ON characteristics_reviews(characteristics_id);
 
 -- COPY reviews(id, product_id, rating, date, summary, body, recommend, reported, reviewer_name, reviewer_email, response, helpfulness) FROM '/home/yue_zhang/hackreactor/w9/SDC-Rating-Review/seeds/reviews.csv' DELIMITER ',' CSV HEADER;
