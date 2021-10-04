@@ -36,9 +36,10 @@ const getReviews = async (req, res) => {
 
 // ============ GET / reviews /mata =================
 const getMetaData = async (req, res) => {
-  const product_id= req.query.product_id || 123;
+  // console.log('req.query', req.query)
+  const product_id= Number(req.query.product_id) || 123;
   let sendBack = {
-    product_id,
+    product_id: product_id,
     ratings: {
       1: 0,
       2: 0,

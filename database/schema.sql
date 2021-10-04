@@ -17,8 +17,8 @@ CREATE TABLE reviews (
   helpfulness INT NOT NULL DEFAULT 0
 );
 
--- CREATE INDEX reviews_id_index ON reviews(id);
--- CREATE INDEX reviews_product_id_index ON reviews(product_id);
+CREATE INDEX reviews_id_index ON reviews(id);
+CREATE INDEX reviews_product_id_index ON reviews(product_id);
 
 -- ========== reviews_phtotos table =================
 CREATE TABLE  reviews_photos (
@@ -28,7 +28,7 @@ CREATE TABLE  reviews_photos (
   FOREIGN KEY (review_id) REFERENCES reviews(id)
 );
 
--- CREATE INDEX reviewS_photos_index ON reviews_photos(review_id)
+CREATE INDEX reviewS_photos_index ON reviews_photos(review_id);
 
 -- ========== characteristics table =================
 CREATE TABLE characteristics (
@@ -46,14 +46,7 @@ CREATE TABLE characteristics_reviews (
   FOREIGN KEY (characteristics_id) REFERENCES characteristics(id),
   FOREIGN KEY (review_id) REFERENCES reviews(id)
 );
-
-
-
-
-
-
-
--- CREATE INDEX cha_id_index ON characteristics_reviews(characteristics_id);
+CREATE INDEX cha_id_index ON characteristics_reviews(characteristics_id);
 
 -- COPY reviews(id, product_id, rating, date, summary, body, recommend, reported, reviewer_name, reviewer_email, response, helpfulness) FROM '/home/yue_zhang/hackreactor/w9/SDC-Rating-Review/seeds/reviews.csv' DELIMITER ',' CSV HEADER;
 -- COPY reviews_photos(id, review_id, url) FROM '/home/yue_zhang/hackreactor/w9/SDC-Rating-Review/seeds/reviews_photos.csv' DELIMITER ',' CSV HEADER;
