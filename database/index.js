@@ -9,7 +9,7 @@ const db = new Pool({
 });
 
 db.connect()
-.then(() => console.log(`Connected to database `))
+.then(() => console.log(`Connected to database successfully `))
 .catch((err) => console.log(`Error connecting to db: ${err}`));
 
 module.exports = db;

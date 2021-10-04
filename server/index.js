@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const router = require('./routes/index.js')
-const port = 3002
+const port = 3001
 
 // Middlewares
 app.use(express.json());
@@ -12,5 +12,5 @@ app.use('/', router)
 
 // Port console.log
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`App listening at http://localhost:${port}`)
 })
