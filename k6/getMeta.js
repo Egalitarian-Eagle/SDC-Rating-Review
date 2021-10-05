@@ -32,18 +32,5 @@ export default function() {
     })
     sleep (SLEEP_DURATION);
 
-    // let updateHelpful = http.put('http://localhost:3002/reviews/:review_id/helpful');
-    // check (updateHelpful, {
-    //   'is status 200' : (r) => r.status === 200,
-    //   'is duration < 250ms': (r) => r.timings.duration < 250,
-    // })
-    // sleep (SLEEP_DURATION);
-
-    // let updateReport = http.put('http://localhost:3002/reviews/:review_id/report');
-    // check (updateReport, {
-    //   'is status 200' : (r) => r.status === 200,
-    //   'is duration < 250ms': (r) => r.timings.duration < 250,
-    // })
-    // sleep (SLEEP_DURATION);
   })
 }
