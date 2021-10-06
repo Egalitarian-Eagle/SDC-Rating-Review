@@ -48,7 +48,7 @@ CREATE TABLE characteristics_reviews (
 );
 CREATE INDEX cha_id_index ON characteristics_reviews(characteristics_id);
 
-
+-- ============ fix error "duplicate key violats unique constraint" ===============================
 SELECT setval('reviews_id_seq', COALESCE((SELECT MAX(id)+1 FROM reviews), 1));
 SELECT setval('reviews_photos_id_seq', COALESCE((SELECT MAX(id)+1 FROM reviews_photos), 1));
 SELECT setval('characteristics_id_seq', COALESCE((SELECT MAX(id)+1 FROM characteristics), 1));
