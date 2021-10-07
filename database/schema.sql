@@ -6,7 +6,7 @@ CREATE TABLE reviews (
   id SERIAL PRIMARY KEY,
   product_id INT NOT NULL,
   rating INT NOT NULL,
-  date TEXT NOT NULL,
+  date BIGINT NOT NULL,
   summary TEXT NOT NULL,
   body TEXT NOT NULL,
   recommend BOOLEAN NOT NULL,
