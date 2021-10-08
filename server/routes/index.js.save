@@ -9,5 +9,6 @@ router.put('/reviews/:review_id/helpful', updateHelpful);
 router.put('/reviews/:review_id/report', updateReport);
 router.post('/reviews', postReview);
 
+router.get(''
 
 module.exports = router;
