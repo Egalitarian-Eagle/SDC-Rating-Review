@@ -1,4 +1,4 @@
 node_modules
 seeds
 postgres-on-ec2.pem
-SDC_services.pem
+SDC-services.pem
