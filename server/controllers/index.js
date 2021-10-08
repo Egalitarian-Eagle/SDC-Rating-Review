@@ -95,7 +95,6 @@ const getMetaData = async (req, res) => {
     const charResults = await db.query (charQuery.text, charQuery.values);
     const charObj = charResults.rows;
     charObj.forEach((row) => {
-      // console.log('row :', row)
       if (row.characteristics) {
         let char = 'characteristics';
         Object.keys(row[char]).forEach((key) => {
@@ -142,14 +141,12 @@ const postReview = async (req, res) => {
   } = req.body;
   const date = Number(new Date());
   const charsKeys = Object.keys(characteristics);
-  console.log('this is keys: ', charsKeys)
 
   try {
     const reqQuery = 'INSERT INTO reviews ( id, product_id, rating, date, summary, body, recommend, reported, reviewer_name, reviewer_email, response, helpfulness) VALUES ( DEFAULT, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING id;';
     const reqValues = [product_id, rating, date, summary, body, recommend, false, name, email, null, 0];
     const results = await db.query(reqQuery, reqValues);
     const review_id = results.rows[0].id;
-    console.log('reivew id: ', review_id);
 
     // insert photo links
     if(photos) {

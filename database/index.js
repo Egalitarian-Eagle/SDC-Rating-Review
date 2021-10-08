@@ -1,10 +1,10 @@
 const { Pool } = require('pg');
 
 const db = new Pool({
-    host: 'localhost',
-    database: 'sdc_test',
-    user: 'postgres',
-    password: 'newPassword',
+    host: 'ec2-3-19-229-80.us-east-2.compute.amazonaws.com',
+    database: 'SDC_ec2',
+    user: 'ubuntu',
+    password: 'password',
     port: 5432
 });
 
